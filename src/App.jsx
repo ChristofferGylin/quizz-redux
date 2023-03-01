@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
 import { useQuizzes } from './redux/quizzes';
 import Result from './modules/Result';
 import Quizz from './modules/Quizz';
