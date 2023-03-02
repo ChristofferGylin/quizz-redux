@@ -1,7 +1,6 @@
-import { useQuizzes } from "./redux/quizzes";
-import Result from "./modules/Result";
-import Quizz from "./modules/Quizz";
-import { start } from "./redux/quizzes";
+import { useQuizzes, start } from "../redux/quizzes";
+import Result from "./Result";
+import Quizz from "./Quizz";
 
 const Home = () => {
   const renderApp = () => {
