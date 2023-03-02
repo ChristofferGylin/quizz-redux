@@ -3,6 +3,10 @@ import updateQuestion from "./actions/updateQuestion";
 import addQuestion from "./actions/addQuestion";
 import deleteQuestion from "./actions/deleteQuestion";
 import startQuizz from "./actions/startQuizz";
+import setQuestion from "./actions/setQuestion";
+import setTitle from "./actions/setTitle";
+import setAlt from "./actions/setAlt";
+import setCorrect from "./actions/setCorrect";
 
 // Data för frågorna:
 // Data för quizzet:
@@ -25,11 +29,17 @@ import startQuizz from "./actions/startQuizz";
 // Öka currentQuestion med 1.
 
 const state = {
+  inputFields: {
+    title: '',
+    alt: ['', '', ''],
+    correct: 0
+  },
   quizzStarted: false,
   showResult: false,
   currentQuizz: 0,
   currentQuestion: 0,
   score: 0,
+  selectedQuestion: null,
   questions: [
     {
       title: "What is 7 + 9?",
@@ -64,7 +74,7 @@ const state = {
   ],
 };
 
-export const [useQuizzes, { add, update, del, start }] = createReduxModule(
+export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC }] = createReduxModule(
   "quizzes",
   state,
   {
@@ -72,5 +82,9 @@ export const [useQuizzes, { add, update, del, start }] = createReduxModule(
     update: updateQuestion,
     del: deleteQuestion,
     start: startQuizz,
+    setQ: setQuestion,
+    setT: setTitle,
+    setA: setAlt,
+    setC: setCorrect
   }
 );

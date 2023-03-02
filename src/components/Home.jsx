@@ -14,7 +14,7 @@ const Home = () => {
           onClick={start}
           className={"border border-slate-500 py-1 px-3 rounded-xl"}
         >
-          Starta Quizz
+          Start Quizz
         </button>
       );
     }
