@@ -5,11 +5,13 @@ const AnswerItem = (props) => {
     const { text, index } = props;
 
     return (
-        <li className="flex text-xl gap-2 mb-4 p-2 border rounded-lg border-slate-400 bg-slate-300/50 hover:cursor-pointer hover:bg-slate-300 hover:text-slate-900"
-            onClick={() => {
-                answer(index);
-            }}>
-            <div className="font-semibold w-4" >{index + 1}.</div><div>{text}</div>
+        <li className="w-full"
+        >
+            <button
+                onClick={() => { answer(index) }}
+                className={"flex gap-4 border border-slate-400 bg-slate-300/50 py-2 px-5 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 text-2xl rounded-xl w-full"}>
+                <div className="font-semibold ">{index + 1}.</div><div>{text}</div>
+            </button>
         </li>
     )
 

@@ -3,13 +3,13 @@ import { IoMdSettings } from "react-icons/io";
 
 const Menu = () => {
   return (
-    <div className="flex justify-between w-full bg-slate-700 h-36 p-2">
+    <div className="flex justify-between w-full h-full bg-slate-700 p-2">
       <Link to={"/"}>
-        <h1 className="text-5xl text-slate-300">Quizz Time</h1>
+        <h1 className="text-5xl text-slate-300 hover:text-slate-200">Quizz Time</h1>
       </Link>
 
       <Link to={"/admin"}>
-        <IoMdSettings className="text-3xl text-slate-300" />
+        <IoMdSettings className="text-3xl text-slate-300 hover:text-slate-200" />
       </Link>
     </div>
   );

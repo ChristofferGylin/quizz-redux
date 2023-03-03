@@ -69,11 +69,16 @@ const InputForm = () => {
                     <option value={2}>3</option>
                 </select>
             </div>
-            <div className="flex gap-4 mx-auto">
-                <button onClick={add} className="py-1 px-3 border text-slate-100 rounded-xl bg-slate-600 border-slate-400 hover:bg-slate-700 hover:text-slate-50">
+            <div className="flex gap-4 w-full flex-grow-0">
+                <button
+                    onClick={add}
+                    className={"border w-full border-slate-400 bg-slate-300/50 py-2 px-5 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 text-lg font-semibold rounded-xl"}>
                     Save New
                 </button>
-                <button disabled={updateDisabled} onClick={update} className="py-1 px-3 border text-slate-100 rounded-xl bg-slate-600 border-slate-400 hover:bg-slate-700 hover:text-slate-50 disabled:bg-slate-400">
+                <button
+                    disabled={updateDisabled}
+                    onClick={update}
+                    className={"border w-full border-slate-400 bg-slate-300/50 py-2 px-5 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 disabled:bg-slate-300/20 disabled:text-slate-400 disabled:border-slate-400/50 text-lg font-semibold rounded-xl"}>
                     Update
                 </button>
             </div>

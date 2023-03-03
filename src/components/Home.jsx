@@ -1,6 +1,7 @@
 import { useQuizzes, start } from "../redux/quizzes";
 import Result from "./Result";
 import Quizz from "./Quizz";
+import Start from "./Start";
 
 const Home = () => {
 
@@ -12,18 +13,11 @@ const Home = () => {
     } else if (quizzes.quizzStarted) {
       return <Quizz />;
     } else {
-      return (
-        <button
-          onClick={start}
-          className={"border border-slate-500 py-1 px-3 rounded-xl"}
-        >
-          Start Quizz
-        </button>
-      );
+      return <Start />;
     }
   };
 
-  return <div>{renderApp()}</div>;
+  return <div className="flex justify-center items-center h-full">{renderApp()}</div>;
 };
 
 export default Home;
