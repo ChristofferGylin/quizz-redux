@@ -1,5 +1,5 @@
 const setQuestion = (state, payload) => {
-    console.log(payload);
+
     return {
         ...state,
         inputFields: payload.inputFields,

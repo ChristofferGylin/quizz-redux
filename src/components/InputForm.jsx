@@ -1,31 +1,18 @@
 import { useState } from "react";
-import { useQuizzes, setT, setA, setQ, setC } from "../redux/quizzes";
+import { useQuizzes, setT, setA, add, setC, update } from "../redux/quizzes";
 
 const InputForm = () => {
 
-    const getValue = (attribute) => {
+    let updateDisabled = false;
 
-        if (useQuizzes().selectedQuestion === null) {
-
-            return '';
-
-        } else {
-
-            return useQuizzes().questions[useQuizzes().selectedQuestion][attribute];
-
-        }
-
+    if (useQuizzes().selectedQuestion === null) {
+        updateDisabled = true;
     }
-
-    //const title = getValue('title');
 
     return (
 
-        <form
-            action=""
-            className="flex flex-col border border-slate-400 bg-slate-200 rounded-lg p-4"
-        >
-            <h2 className="text-lg font-semibold">Question:</h2>
+        <div className="flex flex-col border border-slate-400 bg-slate-200 rounded-lg p-4 text-slate-700">
+            <h2 className="text-xl font-semibold">Create New, or Update Question</h2>
             <div className="flex flex-col my-4">
                 <label htmlFor="inputTitle">Title</label>
                 <input
@@ -43,7 +30,7 @@ const InputForm = () => {
                     type="text"
                     id="inputAlt0"
                     className="border border-slate-500 rounded"
-                    onChange={e => setA(e.target.value)}
+                    onChange={e => setA({ index: 0, answer: e.target.value })}
                     value={useQuizzes().inputFields.alt[0]}
                 />
             </div>
@@ -54,7 +41,7 @@ const InputForm = () => {
                     type="text"
                     id="inputAlt1"
                     className="border border-slate-500 rounded"
-                    onChange={e => setA(e.target.value)}
+                    onChange={e => setA({ index: 1, answer: e.target.value })}
                     value={useQuizzes().inputFields.alt[1]}
                 />
             </div>
@@ -65,7 +52,7 @@ const InputForm = () => {
                     type="text"
                     id="inputAlt2"
                     className="border border-slate-500 rounded"
-                    onChange={e => setAlt(e.target.value)}
+                    onChange={e => setA({ index: 2, answer: e.target.value })}
                     value={useQuizzes().inputFields.alt[2]}
                 />
             </div>
@@ -83,14 +70,14 @@ const InputForm = () => {
                 </select>
             </div>
             <div className="flex gap-4 mx-auto">
-                <button className="py-1 px-3 border text-slate-100 rounded-xl bg-slate-600 border-slate-400 hover:bg-slate-700 hover:text-slate-50">
+                <button onClick={add} className="py-1 px-3 border text-slate-100 rounded-xl bg-slate-600 border-slate-400 hover:bg-slate-700 hover:text-slate-50">
                     Save New
                 </button>
-                <button className="py-1 px-3 border text-slate-100 rounded-xl bg-slate-600 border-slate-400 hover:bg-slate-700 hover:text-slate-50">
+                <button disabled={updateDisabled} onClick={update} className="py-1 px-3 border text-slate-100 rounded-xl bg-slate-600 border-slate-400 hover:bg-slate-700 hover:text-slate-50 disabled:bg-slate-400">
                     Update
                 </button>
             </div>
-        </form>
+        </div>
 
     )
 

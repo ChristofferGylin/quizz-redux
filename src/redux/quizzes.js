@@ -7,6 +7,7 @@ import setQuestion from "./actions/setQuestion";
 import setTitle from "./actions/setTitle";
 import setAlt from "./actions/setAlt";
 import setCorrect from "./actions/setCorrect";
+import emptyFields from "./actions/emptyFields";
 
 // Data för frågorna:
 // Data för quizzet:
@@ -29,11 +30,7 @@ import setCorrect from "./actions/setCorrect";
 // Öka currentQuestion med 1.
 
 const state = {
-  inputFields: {
-    title: '',
-    alt: ['', '', ''],
-    correct: 0
-  },
+  inputFields: emptyFields,
   quizzStarted: false,
   showResult: false,
   currentQuizz: 0,
