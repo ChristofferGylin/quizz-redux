@@ -3,10 +3,13 @@ import Result from "./Result";
 import Quizz from "./Quizz";
 
 const Home = () => {
+
+  const quizzes = useQuizzes();
+
   const renderApp = () => {
-    if (useQuizzes().showResult) {
+    if (quizzes.showResult) {
       return <Result />;
-    } else if (useQuizzes().quizzStarted) {
+    } else if (quizzes.quizzStarted) {
       return <Quizz />;
     } else {
       return (

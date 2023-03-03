@@ -1,6 +1,6 @@
 import { setQ, useQuizzes, del } from "../redux/quizzes";
 import { MdClose } from 'react-icons/md'
-import { useState } from "react";
+
 
 const ListItem = (props) => {
     const { question, index } = props;

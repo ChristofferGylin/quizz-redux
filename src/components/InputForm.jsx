@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useQuizzes, setT, setA, add, setC, update } from "../redux/quizzes";
 
 const InputForm = () => {
-
+    const quizzes = useQuizzes();
     let updateDisabled = false;
 
-    if (useQuizzes().selectedQuestion === null) {
+    if (quizzes.selectedQuestion === null) {
         updateDisabled = true;
     }
 
@@ -20,7 +20,7 @@ const InputForm = () => {
                     id="inputTitle"
                     className="border border-slate-500 rounded"
                     onChange={e => setT(e.target.value)}
-                    value={useQuizzes().inputFields.title}
+                    value={quizzes.inputFields.title}
                 />
             </div>
             <h2 className="text-lg font-semibold">Answers:</h2>
@@ -31,7 +31,7 @@ const InputForm = () => {
                     id="inputAlt0"
                     className="border border-slate-500 rounded"
                     onChange={e => setA({ index: 0, answer: e.target.value })}
-                    value={useQuizzes().inputFields.alt[0]}
+                    value={quizzes.inputFields.alt[0]}
                 />
             </div>
 
@@ -42,7 +42,7 @@ const InputForm = () => {
                     id="inputAlt1"
                     className="border border-slate-500 rounded"
                     onChange={e => setA({ index: 1, answer: e.target.value })}
-                    value={useQuizzes().inputFields.alt[1]}
+                    value={quizzes.inputFields.alt[1]}
                 />
             </div>
 
@@ -53,7 +53,7 @@ const InputForm = () => {
                     id="inputAlt2"
                     className="border border-slate-500 rounded"
                     onChange={e => setA({ index: 2, answer: e.target.value })}
-                    value={useQuizzes().inputFields.alt[2]}
+                    value={quizzes.inputFields.alt[2]}
                 />
             </div>
 
@@ -63,7 +63,7 @@ const InputForm = () => {
                     id="inputCorrect"
                     className="border border-slate-500 rounded"
                     onChange={e => setC(e.target.value)}
-                    value={useQuizzes().inputFields.correct}>
+                    value={quizzes.inputFields.correct}>
                     <option value={0}>1</option>
                     <option value={1}>2</option>
                     <option value={2}>3</option>

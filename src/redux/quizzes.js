@@ -1,4 +1,5 @@
 import { createReduxModule } from "hooks-for-redux";
+import answerQuestion from "./actions/answerQuestion";
 import updateQuestion from "./actions/updateQuestion";
 import addQuestion from "./actions/addQuestion";
 import deleteQuestion from "./actions/deleteQuestion";
@@ -71,7 +72,7 @@ const state = {
   ],
 };
 
-export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC }] = createReduxModule(
+export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, answer }] = createReduxModule(
   "quizzes",
   state,
   {
@@ -82,6 +83,7 @@ export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC }] =
     setQ: setQuestion,
     setT: setTitle,
     setA: setAlt,
-    setC: setCorrect
+    setC: setCorrect,
+    answer: answerQuestion
   }
 );
