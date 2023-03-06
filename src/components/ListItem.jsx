@@ -6,7 +6,7 @@ const ListItem = (props) => {
     const { question, index } = props;
     return (
 
-        <li className="flex items-center gap-4 border-b border-slate-500 hover:bg-slate-300 hover:cursor-pointer odd:bg-slate-300/50 p-1 last:border-none">
+        <li className="flex items-center gap-4 border-b border-slate-400 hover:bg-slate-300 hover:cursor-pointer odd:bg-slate-300/50 p-1 last:border-none">
             <div className="flex items-center gap-4 w-full" onClick={() => {
 
 

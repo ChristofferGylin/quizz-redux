@@ -10,26 +10,6 @@ import setAlt from "./actions/setAlt";
 import setCorrect from "./actions/setCorrect";
 import emptyFields from "./actions/emptyFields";
 
-// Data för frågorna:
-// Data för quizzet:
-
-// När man klickar på ett svarsalternativ:
-// 1. Koll om det var rätt svar -> Öka score med 1.
-// 2. Kolla om det var sista frågan, kolla om currentQuestion === questions.length -1
-// -> visa resultat.
-
-// Redux funktioner (Actions) som behövs;
-// 1. addQuestion
-// 2. updateQuestion
-// 3. deleteQuestion
-
-// 4 Start quizz - quizzStarted = true, showResult = false, currentQuestion = 0, score = 0
-
-// 5. Answer question
-// Kolla om det är rätt svar, då öka score
-// Kolla om det är sista frågan då ändra showResult = true
-// Öka currentQuestion med 1.
-
 const state = {
   inputFields: emptyFields,
   quizzStarted: false,
