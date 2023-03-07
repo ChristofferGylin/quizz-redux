@@ -16,7 +16,7 @@ const updateQuestion = (state) => {
             return {
                 title: state.inputFields.title,
                 alt: state.inputFields.alt,
-                correct: state.inputFields.correct,
+                correct: parseInt(state.inputFields.correct),
                 id: state.selectedQuestion,
             };
 

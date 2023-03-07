@@ -8,7 +8,7 @@ const addQuestion = (state) => {
     const question = {
         title: state.inputFields.title,
         alt: state.inputFields.alt,
-        correct: state.inputFields.correct,
+        correct: parseInt(state.inputFields.correct),
         id: `q${state.questions.length}-${Date.now()}`,
     };
 
@@ -24,6 +24,8 @@ const addQuestion = (state) => {
     }
 
     saveToLocal(newState);
+
+    console.log(newState);
 
     return newState
 }
