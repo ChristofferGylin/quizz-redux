@@ -1,10 +1,7 @@
-import emptyFields from "./emptyFields";
-
 const saveToLocal = (data) => {
 
     data = {
         ...data,
-        inputFields: emptyFields,
         quizzStarted: false,
         showResult: false,
         currentQuizz: 0,

@@ -1,5 +1,4 @@
-import emptyFields from "./emptyFields";
-import saveToLocal from "./saveToLocal";
+import saveToLocal from "../../saveToLocal";
 
 const updateQuestion = (state, refs) => {
 

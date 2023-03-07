@@ -5,14 +5,11 @@ import addQuestion from "./actions/addQuestion";
 import deleteQuestion from "./actions/deleteQuestion";
 import startQuizz from "./actions/startQuizz";
 import setQuestion from "./actions/setQuestion";
-import setTitle from "./actions/setTitle";
-import setAlt from "./actions/setAlt";
-import setCorrect from "./actions/setCorrect";
-import emptyFields from "./actions/emptyFields";
+
 import resetQuizz from "./actions/resetQuizz";
 
 let state = {
-  inputFields: emptyFields,
+
   quizzStarted: false,
   showResult: false,
   currentQuizz: 0,
@@ -61,7 +58,7 @@ if (dataFromStorage) {
 
 }
 
-export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, answer, resetQ }] = createReduxModule(
+export const [useQuizzes, { add, update, del, start, setQ, answer, resetQ }] = createReduxModule(
   "quizzes",
   state,
   {
@@ -70,9 +67,6 @@ export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, ans
     del: deleteQuestion,
     start: startQuizz,
     setQ: setQuestion,
-    setT: setTitle,
-    setA: setAlt,
-    setC: setCorrect,
     answer: answerQuestion,
     resetQ: resetQuizz
   }

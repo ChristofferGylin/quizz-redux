@@ -1,5 +1,4 @@
-import resetForm from "../../components/resetForm";
-import saveToLocal from "./saveToLocal";
+import saveToLocal from "../../saveToLocal";
 
 const deleteQuestion = (state, payload) => {
 

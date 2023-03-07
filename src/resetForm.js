@@ -1,4 +1,4 @@
-import { setQ } from "../redux/quizzes";
+import { setQ } from "./redux/quizzes";
 
 const resetForm = (refs) => {
 

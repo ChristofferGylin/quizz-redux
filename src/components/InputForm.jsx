@@ -1,9 +1,7 @@
-import { useQuizzes, setT, setA, add, setC, update } from "../redux/quizzes";
-import { useEffect, useRef, useState } from "react";
-import resetForm from "./resetForm";
+import { useQuizzes, add, update } from "../redux/quizzes";
+import resetForm from "../resetForm";
 
 const InputForm = (props) => {
-
 
     const { refs } = props;
     const quizzes = useQuizzes();

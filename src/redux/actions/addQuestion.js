@@ -1,4 +1,4 @@
-import saveToLocal from "./saveToLocal";
+import saveToLocal from "../../saveToLocal";
 
 const addQuestion = (state, refs) => {
 

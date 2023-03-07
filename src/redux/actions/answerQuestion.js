@@ -1,8 +1,6 @@
-import saveToLocal from "./saveToLocal";
+import saveToLocal from "../../saveToLocal";
 
 const answerQuestion = (state, payload) => {
-
-
 
     let newScore = state.score;
 

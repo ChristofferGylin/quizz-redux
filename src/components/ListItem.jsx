@@ -1,6 +1,6 @@
 import { setQ, useQuizzes, del } from "../redux/quizzes";
 import { MdClose } from 'react-icons/md';
-import resetForm from "./resetForm";
+import resetForm from "../resetForm";
 
 
 const ListItem = (props) => {
