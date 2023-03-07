@@ -9,6 +9,7 @@ import setTitle from "./actions/setTitle";
 import setAlt from "./actions/setAlt";
 import setCorrect from "./actions/setCorrect";
 import emptyFields from "./actions/emptyFields";
+import resetQuizz from "./actions/resetQuizz";
 
 let state = {
   inputFields: emptyFields,
@@ -17,7 +18,6 @@ let state = {
   currentQuizz: 0,
   currentQuestion: 0,
   score: 0,
-  selectedQuestion: null,
   questions: [
     {
       title: "What is 7 + 9?",
@@ -61,7 +61,7 @@ if (dataFromStorage) {
 
 }
 
-export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, answer }] = createReduxModule(
+export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, answer, resetQ }] = createReduxModule(
   "quizzes",
   state,
   {
@@ -73,6 +73,7 @@ export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, ans
     setT: setTitle,
     setA: setAlt,
     setC: setCorrect,
-    answer: answerQuestion
+    answer: answerQuestion,
+    resetQ: resetQuizz
   }
 );

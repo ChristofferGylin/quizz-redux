@@ -1,22 +1,7 @@
-import emptyFields from "./emptyFields";
+import resetForm from "../../components/resetForm";
 import saveToLocal from "./saveToLocal";
 
 const deleteQuestion = (state, payload) => {
-
-    let fields;
-    let select;
-
-    if (state.selectedQuestion === payload) {
-
-        fields = { ...emptyFields };
-        select = null;
-
-    } else {
-
-        fields = { ...state.inputFields };
-        select = state.selectedQuestion;
-
-    }
 
     const newState = {
         ...state,
@@ -29,8 +14,7 @@ const deleteQuestion = (state, payload) => {
                 return false;
             }
         }),
-        inputFields: fields,
-        selectedQuestion: select
+
 
     }
 

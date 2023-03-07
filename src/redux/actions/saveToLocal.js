@@ -10,7 +10,7 @@ const saveToLocal = (data) => {
         currentQuizz: 0,
         currentQuestion: 0,
         score: 0,
-        selectedQuestion: null,
+
     }
 
     localStorage.setItem('gylin-quizz-redux', JSON.stringify(data))

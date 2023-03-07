@@ -1,14 +1,15 @@
-import emptyFields from "./emptyFields";
 import saveToLocal from "./saveToLocal";
 
-const addQuestion = (state) => {
+const addQuestion = (state, refs) => {
 
-
+    state.selectedQuestion = null;
 
     const question = {
-        title: state.inputFields.title,
-        alt: state.inputFields.alt,
-        correct: parseInt(state.inputFields.correct),
+        title: refs.title.current.value,
+        alt: [
+            refs.alt0.current.value, refs.alt1.current.value, refs.alt2.current.value
+        ],
+        correct: parseInt(refs.correct.current.value),
         id: `q${state.questions.length}-${Date.now()}`,
     };
 
@@ -18,14 +19,10 @@ const addQuestion = (state) => {
             ...state.questions,
             question
         ],
-        selectedQuestion: null,
-        inputFields: emptyFields,
 
     }
 
     saveToLocal(newState);
-
-    console.log(newState);
 
     return newState
 }

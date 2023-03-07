@@ -4,8 +4,7 @@ const setQuestion = (state, payload) => {
 
     const newState = {
         ...state,
-        inputFields: payload.inputFields,
-        selectedQuestion: payload.selectedQuestion
+        selectedQuestion: payload
     }
 
     saveToLocal(newState);

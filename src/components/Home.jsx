@@ -6,7 +6,9 @@ import { useQuizzes } from "../redux/quizzes";
 
 const Home = () => {
 
+
   const quizzes = useQuizzes();
+
 
   const renderApp = () => {
     if (quizzes.showResult) {

@@ -1,7 +1,7 @@
 import emptyFields from "./emptyFields";
 import saveToLocal from "./saveToLocal";
 
-const updateQuestion = (state) => {
+const updateQuestion = (state, refs) => {
 
     if (state.selectedQuestion === null) {
 
@@ -14,9 +14,11 @@ const updateQuestion = (state) => {
         if (question.id === state.selectedQuestion) {
 
             return {
-                title: state.inputFields.title,
-                alt: state.inputFields.alt,
-                correct: parseInt(state.inputFields.correct),
+                title: refs.title.current.value,
+                alt: [
+                    refs.alt0.current.value, refs.alt1.current.value, refs.alt2.current.value
+                ],
+                correct: parseInt(refs.correct.current.value),
                 id: state.selectedQuestion,
             };
 
@@ -31,9 +33,8 @@ const updateQuestion = (state) => {
 
     const newState = {
         ...state,
-        selectedQuestion: null,
-        inputFields: emptyFields,
-        questions
+        questions,
+        selectedQuestion: null
 
     }
 

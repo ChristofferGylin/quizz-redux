@@ -1,12 +1,22 @@
-import { useState } from "react";
 import { useQuizzes, setT, setA, add, setC, update } from "../redux/quizzes";
+import { useEffect, useRef, useState } from "react";
+import resetForm from "./resetForm";
 
-const InputForm = () => {
+const InputForm = (props) => {
+
+
+    const { refs } = props;
     const quizzes = useQuizzes();
     let updateDisabled = false;
 
     if (quizzes.selectedQuestion === null) {
+
         updateDisabled = true;
+
+    } else {
+
+        updateDisabled = false;
+
     }
 
     return (
@@ -19,8 +29,7 @@ const InputForm = () => {
                     type="text"
                     id="inputTitle"
                     className="border border-slate-500 rounded"
-                    onChange={e => setT(e.target.value)}
-                    value={quizzes.inputFields.title}
+                    ref={refs.title}
                 />
             </div>
             <h2 className="text-lg font-semibold">Answers:</h2>
@@ -30,8 +39,7 @@ const InputForm = () => {
                     type="text"
                     id="inputAlt0"
                     className="border border-slate-500 rounded"
-                    onChange={e => setA({ index: 0, answer: e.target.value })}
-                    value={quizzes.inputFields.alt[0]}
+                    ref={refs.alt0}
                 />
             </div>
 
@@ -41,8 +49,7 @@ const InputForm = () => {
                     type="text"
                     id="inputAlt1"
                     className="border border-slate-500 rounded"
-                    onChange={e => setA({ index: 1, answer: e.target.value })}
-                    value={quizzes.inputFields.alt[1]}
+                    ref={refs.alt1}
                 />
             </div>
 
@@ -52,8 +59,7 @@ const InputForm = () => {
                     type="text"
                     id="inputAlt2"
                     className="border border-slate-500 rounded"
-                    onChange={e => setA({ index: 2, answer: e.target.value })}
-                    value={quizzes.inputFields.alt[2]}
+                    ref={refs.alt2}
                 />
             </div>
 
@@ -62,24 +68,39 @@ const InputForm = () => {
                 <select
                     id="inputCorrect"
                     className="border border-slate-500 rounded"
-                    onChange={e => setC(e.target.value)}
-                    value={quizzes.inputFields.correct}>
+                    ref={refs.correct}
+                    defaultValue={0}>
                     <option value={0}>1</option>
                     <option value={1}>2</option>
                     <option value={2}>3</option>
                 </select>
             </div>
-            <div className="flex gap-4 w-full flex-grow-0">
+            <div className="flex flex-col lg:flex-row gap-4 w-full flex-grow-0">
                 <button
-                    onClick={add}
+                    onClick={() => {
+                        add(refs);
+                        resetForm(refs);
+                    }}
                     className={"border w-full border-slate-400 bg-slate-300/50 py-2 px-5 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 text-lg font-semibold rounded-xl"}>
                     Save New
                 </button>
                 <button
                     disabled={updateDisabled}
-                    onClick={update}
+                    onClick={() => {
+                        update(refs);
+                        resetForm(refs);
+                    }}
                     className={"border w-full border-slate-400 bg-slate-300/50 py-2 px-5 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 disabled:bg-slate-300/20 disabled:text-slate-400 disabled:border-slate-400/50 text-lg font-semibold rounded-xl"}>
                     Update
+                </button>
+                <button
+
+                    onClick={() => {
+
+                        resetForm(refs);
+                    }}
+                    className={"border w-full border-slate-400 bg-slate-300/50 py-2 px-5 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 disabled:bg-slate-300/20 disabled:text-slate-400 disabled:border-slate-400/50 text-lg font-semibold rounded-xl"}>
+                    Reset
                 </button>
             </div>
         </div>
