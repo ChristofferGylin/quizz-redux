@@ -1,3 +1,5 @@
+import saveToLocal from "./saveToLocal";
+
 const setAlt = (state, payload) => {
 
 
@@ -5,13 +7,16 @@ const setAlt = (state, payload) => {
 
     alt[payload.index] = payload.answer;
 
-    return {
+    const newState = {
         ...state,
         inputFields: {
             ...state.inputFields,
             alt: alt
         }
     }
+
+    saveToLocal(newState);
+    return newState;
 
 }
 

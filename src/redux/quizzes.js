@@ -10,7 +10,7 @@ import setAlt from "./actions/setAlt";
 import setCorrect from "./actions/setCorrect";
 import emptyFields from "./actions/emptyFields";
 
-const state = {
+let state = {
   inputFields: emptyFields,
   quizzStarted: false,
   showResult: false,
@@ -51,6 +51,15 @@ const state = {
     },
   ],
 };
+
+const dataFromStorage = localStorage.getItem('gylin-quizz-redux');
+
+if (dataFromStorage) {
+
+  const json = JSON.parse(dataFromStorage);
+  state = json;
+
+}
 
 export const [useQuizzes, { add, update, del, start, setQ, setT, setA, setC, answer }] = createReduxModule(
   "quizzes",

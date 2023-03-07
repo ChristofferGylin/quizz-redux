@@ -1,4 +1,5 @@
 import emptyFields from "./emptyFields";
+import saveToLocal from "./saveToLocal";
 
 const updateQuestion = (state) => {
 
@@ -28,15 +29,16 @@ const updateQuestion = (state) => {
     });
 
 
-
-
-    return {
+    const newState = {
         ...state,
         selectedQuestion: null,
         inputFields: emptyFields,
         questions
 
     }
+
+    saveToLocal(newState);
+    return newState;
 
 }
 

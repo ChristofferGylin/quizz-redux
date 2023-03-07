@@ -1,12 +1,17 @@
+import saveToLocal from "./saveToLocal";
+
 const setCorrect = (state, payload) => {
 
-    return {
+    const newState = {
         ...state,
         inputFields: {
             ...state.inputFields,
             correct: payload
         }
     }
+
+    saveToLocal(newState);
+    return newState;
 
 }
 

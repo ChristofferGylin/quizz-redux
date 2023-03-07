@@ -1,4 +1,5 @@
 import emptyFields from "./emptyFields";
+import saveToLocal from "./saveToLocal";
 
 const addQuestion = (state) => {
 
@@ -11,7 +12,7 @@ const addQuestion = (state) => {
         id: `q${state.questions.length}-${Date.now()}`,
     };
 
-    return {
+    const newState = {
         ...state,
         questions: [
             ...state.questions,
@@ -21,6 +22,10 @@ const addQuestion = (state) => {
         inputFields: emptyFields,
 
     }
+
+    saveToLocal(newState);
+
+    return newState
 }
 
 export default addQuestion;

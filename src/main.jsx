@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import Home from "./components/Home";
 import "./index.css";
-import { Provider } from "hooks-for-redux";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Admin from "./components/Admin";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "hooks-for-redux";
 
 const router = createBrowserRouter([
   {

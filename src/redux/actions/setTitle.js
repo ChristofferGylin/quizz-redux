@@ -1,12 +1,17 @@
+import saveToLocal from "./saveToLocal";
+
 const setTitle = (state, payload) => {
 
-    return {
+    const newState = {
         ...state,
         inputFields: {
             ...state.inputFields,
             title: payload
         }
     }
+
+    saveToLocal(newState);
+    return newState;
 
 }
 

@@ -1,3 +1,5 @@
+import saveToLocal from "./saveToLocal";
+
 const answerQuestion = (state, payload) => {
 
 
@@ -22,7 +24,7 @@ const answerQuestion = (state, payload) => {
 
     }
 
-    return {
+    const newState = {
         ...state,
         quizzStarted: quizzOn,
         score: newScore,
@@ -30,6 +32,8 @@ const answerQuestion = (state, payload) => {
         currentQuestion: nextQuestion,
 
     }
+    saveToLocal(newState);
+    return newState;
 
 }
 

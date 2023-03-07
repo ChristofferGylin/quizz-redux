@@ -1,4 +1,5 @@
 import emptyFields from "./emptyFields";
+import saveToLocal from "./saveToLocal";
 
 const deleteQuestion = (state, payload) => {
 
@@ -17,7 +18,7 @@ const deleteQuestion = (state, payload) => {
 
     }
 
-    return {
+    const newState = {
         ...state,
         questions: state.questions.filter((question) => {
             if (question.id !== payload) {
@@ -32,6 +33,9 @@ const deleteQuestion = (state, payload) => {
         selectedQuestion: select
 
     }
+
+    saveToLocal(newState);
+    return newState;
 
 }
 

@@ -1,7 +1,8 @@
-import { useQuizzes, start } from "../redux/quizzes";
+
 import Result from "./Result";
 import Quizz from "./Quizz";
 import Start from "./Start";
+import { useQuizzes } from "../redux/quizzes";
 
 const Home = () => {
 

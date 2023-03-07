@@ -1,11 +1,17 @@
+import saveToLocal from "./saveToLocal";
+
 const startQuizz = (state) => {
-  return {
+
+  const newState = {
     ...state,
     currentQuestion: 0,
     score: 0,
     showResult: false,
     quizzStarted: true,
   };
+
+  saveToLocal(newState);
+  return newState;
 };
 
 export default startQuizz;
