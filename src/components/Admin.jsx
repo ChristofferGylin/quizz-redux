@@ -14,7 +14,7 @@ const Admin = () => {
 
   }
   return (
-    <div className=" grid grid-rows-2 md:grid-cols-2 md:grid-rows-none gap-4 w-full p-4">
+    <div className="grid grid-rows-2 md:grid-cols-2 md:grid-rows-none gap-4 w-full p-4">
       <InputForm refs={refs} />
       <QuestionList refs={refs} />
     </div>

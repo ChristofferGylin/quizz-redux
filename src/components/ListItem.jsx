@@ -10,8 +10,8 @@ const ListItem = (props) => {
 
     return (
 
-        <li className="flex items-center gap-4 border-b border-slate-400 hover:bg-slate-300 hover:cursor-pointer odd:bg-slate-300/50 p-1 last:border-none">
-            <div className="flex items-center gap-4 w-full" onClick={() => {
+        <li className="flex items-start gap-4 border-b border-slate-400 hover:bg-slate-300 hover:cursor-pointer odd:bg-slate-300/50 p-1 last:border-none">
+            <div className="flex items-start gap-4 w-full" onClick={() => {
 
                 refs.title.current.value = question.title;
                 refs.alt0.current.value = question.alt[0];
@@ -20,7 +20,7 @@ const ListItem = (props) => {
                 refs.correct.current.value = question.correct;
                 setQ(question.id)
 
-            }}><div className="font-semibold">{index + 1}.</div><div className="w-full">{question.title}</div></div><div className="hover:bg-red-500/80 group"
+            }}><div className="font-semibold">{index + 1}.</div><div className="w-full">{question.title}</div></div><div className="mt-1 hover:bg-red-500/80 group"
                 onClick={() => {
 
                     del(question.id);
