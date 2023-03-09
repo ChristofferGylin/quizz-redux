@@ -5,16 +5,22 @@ import addQuestion from "./actions/addQuestion";
 import deleteQuestion from "./actions/deleteQuestion";
 import startQuizz from "./actions/startQuizz";
 import setQuestion from "./actions/setQuestion";
-
+import saveResults from "./actions/saveResults";
 import resetQuizz from "./actions/resetQuizz";
 
 let state = {
-
   quizzStarted: false,
   showResult: false,
   currentQuizz: 0,
   currentQuestion: 0,
   score: 0,
+  activeUser: 0,
+  users: [
+    {
+      name: "Guest",
+      results: [],
+    },
+  ],
   questions: [
     {
       title: "What is 7 + 9?",
@@ -49,25 +55,23 @@ let state = {
   ],
 };
 
-const dataFromStorage = localStorage.getItem('gylin-quizz-redux');
+const dataFromStorage = localStorage.getItem("gylin-quizz-redux");
 
 if (dataFromStorage) {
-
   const json = JSON.parse(dataFromStorage);
   state = json;
-
 }
 
-export const [useQuizzes, { add, update, del, start, setQ, answer, resetQ }] = createReduxModule(
-  "quizzes",
-  state,
-  {
-    add: addQuestion,
-    update: updateQuestion,
-    del: deleteQuestion,
-    start: startQuizz,
-    setQ: setQuestion,
-    answer: answerQuestion,
-    resetQ: resetQuizz
-  }
-);
+export const [
+  useQuizzes,
+  { add, update, del, start, setQ, answer, resetQ, save },
+] = createReduxModule("quizzes", state, {
+  add: addQuestion,
+  update: updateQuestion,
+  del: deleteQuestion,
+  start: startQuizz,
+  setQ: setQuestion,
+  answer: answerQuestion,
+  resetQ: resetQuizz,
+  save: saveResults,
+});

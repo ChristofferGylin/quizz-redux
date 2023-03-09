@@ -1,38 +1,42 @@
 import saveToLocal from "../../saveToLocal";
+import { save } from "../quizzes";
 
 const answerQuestion = (state, payload) => {
+  console.log(state);
+  let newScore = state.score;
 
-    let newScore = state.score;
+  if (payload === state.questions[state.currentQuestion].correct) {
+    newScore++;
+  }
 
-    if (payload === state.questions[state.currentQuestion].correct) {
+  let nextQuestion = state.currentQuestion + 1;
+  let quizzOn = true;
+  let results = false;
 
-        newScore++;
+  const users = [...state.users];
 
-    }
+  if (nextQuestion === state.questions.length) {
+    nextQuestion = 0;
+    users[state.activeUser].results.push({
+      numberOfQuestions: state.questions.length,
+      correctQuestions: newScore,
+      percentage: (newScore / state.questions.length) * 100,
 
-    let nextQuestion = state.currentQuestion + 1;
-    let quizzOn = true;
-    let results = false;
+    });
+    quizzOn = false;
+    results = true;
+  }
 
-    if (nextQuestion === state.questions.length) {
-
-        nextQuestion = 0;
-        results = true;
-        quizzOn = false;
-
-    }
-
-    const newState = {
-        ...state,
-        quizzStarted: quizzOn,
-        score: newScore,
-        showResult: results,
-        currentQuestion: nextQuestion,
-
-    }
-    saveToLocal(newState);
-    return newState;
-
-}
+  const newState = {
+    ...state,
+    quizzStarted: quizzOn,
+    score: newScore,
+    showResult: results,
+    currentQuestion: nextQuestion,
+    users,
+  };
+  saveToLocal(newState);
+  return newState;
+};
 
 export default answerQuestion;
