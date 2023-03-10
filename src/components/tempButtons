@@ -1,0 +1,14 @@
+<button
+
+              onClick={() => {
+
+
+              }}
+              className={"border w-full border-slate-400 bg-slate-200 py-1 px-3 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 disabled:bg-slate-300/20 disabled:text-slate-400 disabled:border-slate-400/50 text-md font-semibold rounded-xl"}>
+              Save
+            </button>
+            <button
+              onClick={() => setNewUser(false)}
+              className={"border w-full border-slate-400 bg-slate-200 py-1 px-3 text-slate-600 hover:text-slate-700 hover:bg-slate-300 hover:border-slate-500 disabled:bg-slate-300/20 disabled:text-slate-400 disabled:border-slate-400/50 text-md font-semibold rounded-xl"}>
+              Cancel
+            </button>

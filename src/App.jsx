@@ -3,10 +3,6 @@ import Menu from "./components/Menu";
 
 function App() {
 
-  const time = Date();
-
-  console.log(time);
-
   return (
     <div className="App h-screen flex flex-col">
       <div className="w-full">

@@ -26,7 +26,7 @@ const InputForm = (props) => {
                 <input
                     type="text"
                     id="inputTitle"
-                    className="border border-slate-500 rounded"
+                    className="border border-slate-500 rounded p-1"
                     ref={refs.title}
                 />
             </div>
@@ -36,7 +36,7 @@ const InputForm = (props) => {
                 <input
                     type="text"
                     id="inputAlt0"
-                    className="border border-slate-500 rounded"
+                    className="border border-slate-500 rounded p-1"
                     ref={refs.alt0}
                 />
             </div>
@@ -46,7 +46,7 @@ const InputForm = (props) => {
                 <input
                     type="text"
                     id="inputAlt1"
-                    className="border border-slate-500 rounded"
+                    className="border border-slate-500 rounded p-1"
                     ref={refs.alt1}
                 />
             </div>
@@ -56,7 +56,7 @@ const InputForm = (props) => {
                 <input
                     type="text"
                     id="inputAlt2"
-                    className="border border-slate-500 rounded"
+                    className="border border-slate-500 rounded p-1"
                     ref={refs.alt2}
                 />
             </div>
@@ -65,7 +65,7 @@ const InputForm = (props) => {
                 <label htmlFor="inputCorrect">Correct Answer:</label>
                 <select
                     id="inputCorrect"
-                    className="border border-slate-500 rounded"
+                    className="border border-slate-500 rounded p-1"
                     ref={refs.correct}
                     defaultValue={0}>
                     <option value={0}>1</option>
