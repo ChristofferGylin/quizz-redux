@@ -7,6 +7,8 @@ import startQuizz from "./actions/startQuizz";
 import setQuestion from "./actions/setQuestion";
 import saveResults from "./actions/saveResults";
 import resetQuizz from "./actions/resetQuizz";
+import newUser from "./actions/newUser";
+import setActiveUser from "./actions/setActiveUser";
 
 let state = {
   quizzStarted: false,
@@ -64,7 +66,7 @@ if (dataFromStorage) {
 
 export const [
   useQuizzes,
-  { add, update, del, start, setQ, answer, resetQ, save },
+  { add, update, del, start, setQ, answer, resetQ, save, addUser, setUser },
 ] = createReduxModule("quizzes", state, {
   add: addQuestion,
   update: updateQuestion,
@@ -74,4 +76,6 @@ export const [
   answer: answerQuestion,
   resetQ: resetQuizz,
   save: saveResults,
+  addUser: newUser,
+  setUser: setActiveUser
 });
