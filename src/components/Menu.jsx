@@ -19,6 +19,7 @@ const Menu = () => {
           Quiz Time
         </h1>
       </Link>
+      <Link to={'/leaderboard'}>Leaderboard</Link>
       <div className="flex gap-2">
         <div className="flex flex-col gap-2">
           <select onChange={(e) => setUser(e.target.value)} name="selectUser" id="selectUser" className="h-fit w-36 border border-slate-500 rounded" value={quizzes.activeUser}>
@@ -32,7 +33,6 @@ const Menu = () => {
             New Player
           </button>
         </div>
-
         <Link to={"/admin"} className='h-fit'>
           <IoMdSettings className="text-3xl text-slate-300 hover:text-slate-200" />
         </Link>

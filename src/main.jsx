@@ -6,6 +6,7 @@ import "./index.css";
 import Admin from "./components/Admin";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "hooks-for-redux";
+import Leaderboard from "./components/Leaderboard";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         path: "/admin",
         element: <Admin />,
       },
+      {
+        path: '/leaderboard',
+        element: <Leaderboard />,
+      }
     ],
   },
 ]);
