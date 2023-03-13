@@ -5,7 +5,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    screens: {
+      'sm': '440px',
+    },
+    extend: {
+      gridTemplateColumns: {
+        'leaderboard': '1rem 1fr 1fr 3rem',
+        'leaderboardMb': '1rem auto 3rem'
+      }
+    },
   },
   plugins: [],
 }

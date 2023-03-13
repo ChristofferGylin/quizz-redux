@@ -17,6 +17,7 @@ let state = {
   currentQuestion: 0,
   score: 0,
   activeUser: 0,
+  startTime: null,
   users: [
     {
       name: "Guest",

@@ -2,7 +2,7 @@ import saveToLocal from "../../saveToLocal";
 import { save } from "../quizzes";
 
 const answerQuestion = (state, payload) => {
-  console.log(state);
+
   let newScore = state.score;
 
   if (payload === state.questions[state.currentQuestion].correct) {
@@ -21,6 +21,7 @@ const answerQuestion = (state, payload) => {
       numberOfQuestions: state.questions.length,
       correctQuestions: newScore,
       percentage: (newScore / state.questions.length) * 100,
+      time: Date.now() - state.startTime,
 
     });
     quizzOn = false;

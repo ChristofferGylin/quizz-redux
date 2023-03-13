@@ -14,6 +14,8 @@ const getUserBest = (user) => {
 
     }
 
+
+
     return {
         ...user.results[resultIndex],
         name: user.name

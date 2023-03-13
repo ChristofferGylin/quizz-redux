@@ -8,6 +8,7 @@ const startQuizz = (state) => {
     score: 0,
     showResult: false,
     quizzStarted: true,
+    startTime: Date.now(),
   };
 
   saveToLocal(newState);

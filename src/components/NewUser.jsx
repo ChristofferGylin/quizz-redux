@@ -1,4 +1,4 @@
-import { useQuizzes, addUser } from "../redux/quizzes";
+import { useQuizzes, addUser, resetQ } from "../redux/quizzes";
 import { useState } from "react";
 
 const NewUser = ({ setNewUser }) => {
@@ -30,6 +30,7 @@ const NewUser = ({ setNewUser }) => {
 
                             } else {
 
+                                resetQ();
                                 addUser(userNameInput);
                                 setUserNameInput('');
                                 setNewUser(false);
